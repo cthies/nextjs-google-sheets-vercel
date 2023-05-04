@@ -24,7 +24,7 @@ function Create() {
 
         if (date && number) {
             try {
-                let response = await fetch("http://localhost:3000/api/create", {
+                let response = await fetch(process.env.NEXT_PUBLIC_BASE + "/api/create", {
                     method: "POST",
                     body: JSON.stringify({
                         date,
