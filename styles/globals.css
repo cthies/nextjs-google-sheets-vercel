@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  background: linear-gradient(45deg, #49a09d, #5f2c82);
+  font-family: sans-serif;
+  font-weight: 100;
+  padding: 15px;
+  color: #fff;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 800px;
+  text-align: left;
+}
+
+.hide {
+  display: none;
+}
+
+lable {
+  display: block;
+  margin: 10px 0;
+}
+
+input:not([type='date']) , button {
+  all: unset;
+  margin: 0 0 10px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  border: 1px solid #5f2c82;
+  border-radius: 15px;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.95);
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  border-bottom: 1px solid white;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+
+}
+
+th {
+  text-align: left;
+  background-color: #55608f;
+
+}
+
+
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.diff {
+  font-weight: bold;
+  text-align: right;
+}
+
+.compare {
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 15px;
+  max-width: 300px;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.saving {
+  font-size: 3em;
+  font-weight: bold;
+  display: block;
+}

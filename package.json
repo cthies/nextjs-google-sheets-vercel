@@ -1,0 +1,25 @@
+{
+  "name": "nextjs-google-sheets",
+  "version": "1.0.0",
+  "description": "Use Google Sheets as a Database",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/cthies/nextjs-google-sheets#readme",
+  "dependencies": {
+    "googleapis": "^118.0.0",
+    "next": "^12.3.1",
+    "react": "^17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.12",
+    "prop-types": "^15.8.1"
+  }
+}
