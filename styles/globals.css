@@ -2,9 +2,11 @@ body {
   margin: 0;
   background: linear-gradient(45deg, #49a09d, #5f2c82);
   font-family: sans-serif;
+  font-size: 16px;
   font-weight: 100;
   padding: 15px;
   color: #fff;
+  min-height: 100vh;
 }
 
 .container {
@@ -22,7 +24,8 @@ lable {
   margin: 10px 0;
 }
 
-input, button {
+input,
+button {
   margin: 0 0 10px;
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.8);
@@ -36,11 +39,28 @@ button:hover {
   cursor: pointer;
 }
 
+/* Table */
 table {
   width: 100%;
   border-collapse: collapse;
-  overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+thead,
+tbody {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+tr {
+  display: flex;
+}
+
+td,
+th {
+  width: 33.33%;
+  display: inline-block;
+  ;
 }
 
 th,
@@ -57,7 +77,6 @@ th {
 
 }
 
-
 tr:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
@@ -67,6 +86,9 @@ tr:hover {
   text-align: right;
 }
 
+/* comparison*/
+
+
 .compare {
   border: 2px solid white;
   border-radius: 15px;
@@ -74,10 +96,27 @@ tr:hover {
   max-width: 300px;
   text-align: center;
   margin: 20px auto;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
 }
 
 .saving {
   font-size: 3em;
   font-weight: bold;
   display: block;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }

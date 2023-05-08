@@ -67,7 +67,7 @@ function Create() {
                     <input type="date" id="date" value={date} onChange={(e) => setDate(e.target.value)} />
                 </div>
                 <div>
-                    <lable htmlFor="value">Num</lable>
+                    <lable htmlFor="value">Dial recording </lable>
                     <input type="num" id="value" value={number} onChange={(e) => setNumber(e.target.value)} />
                 </div>
                 <button type="submit" className="btn">

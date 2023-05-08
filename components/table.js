@@ -1,4 +1,5 @@
 import CountUp from "react-countup";
+import Comparison from './comparison'
 
 function Table(props) {
     const sheetdata = props.sheetdata;
@@ -29,10 +30,20 @@ function Table(props) {
                     {item[0]}
                 </td>
                 <td id={item[0] + '-val'}>
-                    {item[1]}
+                    <CountUp
+                        start={0}
+                        end={Number(item[1])}
+                        duration={1}
+                        useEasing={true}
+                    />
                 </td>
                 <td className='diff'>
-                    {diff.toString()}
+                    <CountUp
+                        start={0}
+                        end={diff}
+                        duration={2}
+                        useEasing={true}
+                    />
                 </td>
             </tr>
         )
@@ -44,39 +55,14 @@ function Table(props) {
 
     return (
         <div>
-            <div className="compare">
-                Difference to previous year
-                <span className="saving">
-                    {moreThanLastYear &&
-                        <span>+</span>
-                    }
-                    <CountUp
-                        start={0}
-                        end={saving}
-                        duration={1}
-                        useEasing={true}
-                    />
-                </span>
-                <span>
-                    {moreThanLastYear  &&
-                        <span>+</span>
-                    }
-                    <CountUp
-                        start={0}
-                        end={percentage}
-                        duration={1}
-                        useEasing={true}
-                    />%
-                </span>
-
-            </div>
+            <Comparison moreThanLastYear={moreThanLastYear} saving={saving} percentage={percentage} />
 
             <table id="table">
                 <thead>
                     <tr>
                         <th>Date</th>
-                        <th>Value</th>
-                        <th>Diff to previous month</th>
+                        <th>Dial recording </th>
+                        <th className='diff'>Diff to previous month</th>
                     </tr>
                 </thead>
                 <tbody>
