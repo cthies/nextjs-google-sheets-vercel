@@ -1,3 +1,5 @@
+import CountUp from "react-countup";
+
 function Table(props) {
     const sheetdata = props.sheetdata;
     let prev = 0;
@@ -36,14 +38,37 @@ function Table(props) {
         )
     });
 
-    const percentage = Math.round(100/savingLastYear * (saveLastEntry - savingLastYear)).toFixed(2);
+    const saving = parseInt(saveLastEntry - savingLastYear);
+    const percentage = parseInt(Math.round(100 / savingLastYear * (saving)).toFixed(2));
+    const moreThanLastYear = saving > 0;
 
     return (
         <div>
             <div className="compare">
                 Difference to previous year
-                <span className="saving">{saveLastEntry - savingLastYear}</span>
-                {percentage}%
+                <span className="saving">
+                    {moreThanLastYear &&
+                        <span>+</span>
+                    }
+                    <CountUp
+                        start={0}
+                        end={saving}
+                        duration={1}
+                        useEasing={true}
+                    />
+                </span>
+                <span>
+                    {moreThanLastYear  &&
+                        <span>+</span>
+                    }
+                    <CountUp
+                        start={0}
+                        end={percentage}
+                        duration={1}
+                        useEasing={true}
+                    />%
+                </span>
+
             </div>
 
             <table id="table">
@@ -62,4 +87,4 @@ function Table(props) {
     )
 }
 
-export default Table
+export default Table;
