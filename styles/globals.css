@@ -125,7 +125,17 @@ tr:hover {
 
 /*graph*/
 .graph {
-  margin: 0 auto;
+  margin: 60px auto 30px;
+  position: relative;
+  width: 300px;
+}
+
+.graphHoverValue {
+  position: absolute;
+  text-align: left;
+  width: 120px;
+  right: 0;
+  top: -20px;
 }
 
 .createForm {

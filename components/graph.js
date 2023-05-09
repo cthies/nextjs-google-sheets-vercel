@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import '../node_modules/react-vis/dist/style.css';
-import { XYPlot, XAxis, YAxis, VerticalGridLines, HorizontalGridLines, LineMarkSeries } from 'react-vis';
+import { XYPlot, XAxis, YAxis, VerticalGridLines, HorizontalGridLines, LineMarkSeries, MarkSeries } from 'react-vis';
+import { format } from 'date-fns'
+import { setUncaughtExceptionCaptureCallback } from 'process';
 
 const Graph = (props) => {
     const sheetdata = props.sheetdata;
+    const [text, setText] = useState('');
     let prev = 0;
 
     /*react-vis needs data like this
@@ -19,28 +22,25 @@ const Graph = (props) => {
 
         if (index !== 0) {
             graphData.push({
-                x: Number(index),
-                y: Number(diff)
+                x: format(Date.parse(item[0]), 'MM'),
+                y: Number(diff),
+                d: item[0]
             });
         }
 
     });
 
-    console.log(graphData);
-
-
     //split per year starting with December 2021
-    const slicedArray1 = graphData.slice(1, 13);
-    const slicedArray2 = graphData.slice(13, 25);
+    const slicedArray1 = graphData.slice(0, 12);
+    const slicedArray2 = graphData.slice(12, 25);
 
-    console.log(slicedArray1);
-    console.log(slicedArray2);
     return (
-
-        <XYPlot width={300} height={300} className="graph">
+        <div className="graph">
+        <div className="graphHoverValue">{text}</div>
+        <XYPlot width={300} height={280} xType='ordinal'>
             <VerticalGridLines />
             <HorizontalGridLines />
-            <XAxis style={{
+            <XAxis tickLabelAngle={-45} style={{
                 text: { stroke: 'none', fill: '#ffffff', fontWeight: 600 }
             }} />
             <YAxis style={{
@@ -50,10 +50,28 @@ const Graph = (props) => {
                 className="linemark-series-example-2"
                 curve={'curveMonotoneX'}
                 lineStyle={{ stroke: 'violet' }}
-                markStyle={{ stroke: 'blanchedalmond', fill: 'aquamarine' }}
-                data={graphData}
+                markStyle={{ stroke: 'cyan', fill: 'blueviolet' }}
+                data={slicedArray1}
+                name="2022"
             />
+            <LineMarkSeries
+                className="linemark-series-example-2"
+                curve={'curveMonotoneX'}
+                lineStyle={{ stroke: 'chartreuse' }}
+                markStyle={{ stroke: 'blanchedalmond', fill: 'darkcyan' }}
+                data={slicedArray2}
+                name="2023"
+            />
+            <MarkSeries
+            data={[...slicedArray1,...slicedArray2]}
+            markStyle={{ stroke: 'blanchedalmond', fill: 'darkcyan' }}
+            onNearestXY={(val, {index}) => {
+                setText( val.d + ': ' + val.y);
+            }}
+            />
+            
         </XYPlot>
+        </div>
     );
 }
 
