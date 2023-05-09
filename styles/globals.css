@@ -9,6 +9,10 @@ body {
   min-height: 100vh;
 }
 
+h1, h2, h3 {
+  margin-top: 0;
+}
+
 .container {
   margin: 0 auto;
   max-width: 800px;
@@ -87,8 +91,6 @@ tr:hover {
 }
 
 /* comparison*/
-
-
 .compare {
   border: 2px solid white;
   border-radius: 15px;
@@ -119,4 +121,9 @@ tr:hover {
   100% {
     background-position: 0% 50%;
   }
+}
+
+/*graph*/
+.graph {
+  margin: 0 auto;
 }

@@ -1,22 +1,24 @@
 import Head from 'next/head'
 import Table from '../components/table'
 import Create from '../components/create'
+import Graph from '../components/graph';
 
 export default function Home({ sheetdata }) {
-  console.log(sheetdata);
 
   return (
     <>
       <Head>
-        <title>NextJs for google Spreadsheets</title>
+        <title>NextJs for google Spreadsheets - example Gas meter reading</title>
         <meta name="description" content="Read and write data from google Spreadsheet" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className="container">
         <h1>
-          Items
+          Gaszählerstände
         </h1>
+
+        <Graph sheetdata={sheetdata} />
         <Create />
         <Table sheetdata={sheetdata} />
       </main>

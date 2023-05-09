@@ -16,11 +16,17 @@
     "googleapis": "^118.0.0",
     "next": "^12.3.1",
     "react": "^17.0.2",
+    "react-countup": "4.3.3",
     "react-dom": "17.0.2",
-    "react-countup": "4.3.3"
+    "react-vis": "^1.11.7"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.12",
     "prop-types": "^15.8.1"
+  },
+  "overrides": {
+    "react-vis": {
+      "react": "^17.0.2"
+    }
   }
 }
