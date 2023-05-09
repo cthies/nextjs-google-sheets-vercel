@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Table from '../components/table'
+import Comparison from '../components/comparison'
 import Create from '../components/create'
 import Graph from '../components/graph';
 
@@ -18,6 +19,7 @@ export default function Home({ sheetdata }) {
           Gaszählerstände
         </h1>
 
+        <Comparison sheetdata={sheetdata} />
         <Graph sheetdata={sheetdata} />
         <Create />
         <Table sheetdata={sheetdata} />

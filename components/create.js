@@ -11,7 +11,7 @@ function Create() {
     const handleAdmin = async (event) => {
         event.preventDefault();
 
-        if(password === process.env.NEXT_PUBLIC_ADMIN) {
+        if (password === process.env.NEXT_PUBLIC_ADMIN) {
             setError('');
             setAdmin(true);
         } else {
@@ -48,33 +48,33 @@ function Create() {
     };
 
     return (
-        <>
-            <h2>Create</h2>
+        <div className="createForm">
+            <h2>Neuen Zählerstand erfassen</h2>
             {error &&
                 <p>{error}</p>
             }
             <form onSubmit={handleAdmin} className={admin ? 'hide' : ''}>
-                <label htmlFor="adminpassword">Adminpassword to create new entry</label>
-                <input type="password" id="adminpassword" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                <label htmlFor="adminpassword">Adminpasswort benötigt</label>
+                <input type="password" id="adminpassword" value={password} onChange={(e) => setPassword(e.target.value)} />
                 <button type="submit" className="btn">
                     Login
                 </button>
             </form>
-            
+
             <form onSubmit={handleSubmit} className={admin ? '' : 'hide'}>
                 <div>
-                    <lable htmlFor="date">Date</lable>
+                    <lable htmlFor="date">Datum</lable>
                     <input type="date" id="date" value={date} onChange={(e) => setDate(e.target.value)} />
                 </div>
                 <div>
-                    <lable htmlFor="value">Dial recording </lable>
+                    <lable htmlFor="value">Zählerstand</lable>
                     <input type="num" id="value" value={number} onChange={(e) => setNumber(e.target.value)} />
                 </div>
                 <button type="submit" className="btn">
-                    Create new entry
+                    Speichern
                 </button>
             </form>
-            </>
+        </div>
     )
 }
 
