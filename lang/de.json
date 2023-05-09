@@ -1,0 +1,11 @@
+{
+    "title": "NextJs for google Spreadsheets - example Gas meter reading",
+    "headline": "Gaszählerstände",
+    "tableDate": "Datum",
+    "tableReading": "Zählerstand",
+    "tableDiff": "Verbrauch zum Vormonat",
+    "createNew": "Neuen Zählerstand erfassen",
+    "admin": "Adminpasswort benötigt",
+    "save": "Speichern",
+    "comparison": "Verbrauch im Vergleich zum Vorjahres Monats"
+}

@@ -1,5 +1,5 @@
 function Table(props) {
-    const sheetdata = props.sheetdata;
+    const { sheetdata, content } = props;
     let prev = 0;
 
     const items = sheetdata.map((item, index) => {
@@ -29,9 +29,9 @@ function Table(props) {
             <table id="table">
                 <thead>
                     <tr>
-                        <th>Datum</th>
-                        <th>Zählerstand</th>
-                        <th className='diff'>Vergleich zum Vormonat</th>
+                        <th>{content.tableDate}</th>
+                        <th>{content.tableReading}</th>
+                        <th className='diff'>{content.tableDiff}</th>
                     </tr>
                 </thead>
                 <tbody>

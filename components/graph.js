@@ -1,8 +1,7 @@
 import React, { Component, useState } from 'react';
 import '../node_modules/react-vis/dist/style.css';
 import { XYPlot, XAxis, YAxis, VerticalGridLines, HorizontalGridLines, LineMarkSeries, MarkSeries } from 'react-vis';
-import { format } from 'date-fns'
-import { setUncaughtExceptionCaptureCallback } from 'process';
+import { format } from 'date-fns';
 
 const Graph = (props) => {
     const sheetdata = props.sheetdata;

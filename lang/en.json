@@ -1,0 +1,11 @@
+{
+    "title": "NextJs for google Spreadsheets - example Gas meter reading",
+    "headline": "Gas meter reading",
+    "tableDate": "Date",
+    "tableReading": "Gas meter reading",
+    "tableDiff": "Difference to previous month",
+    "createNew": "New gas meter reading",
+    "admin": "Password required",
+    "save": "Save",
+    "comparison": "Consumption compared to the previous year"
+}

@@ -9,7 +9,7 @@ body {
   min-height: 100vh;
 }
 
-h1, h2, h3 {
+h2, h3 {
   margin-top: 0;
 }
 
@@ -143,4 +143,49 @@ tr:hover {
   border-radius: 15px;;
   padding: 15px;
   margin: 30px 0;
+}
+
+/*languageswitcher*/
+
+.languageSwitcher {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #23d5ab;
+  border: 1px solid #23d5ab;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.languageSwitcher .radio {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline;
+  min-width: 0;
+  min-height: 0;
+  outline: none;
+  background-color: transparent;
+  position: absolute;
+  border: none;
+}
+
+.languageSwitcher .radio::before,
+.languageSwitcher .radio:checked::before {
+  display: none;
+}
+
+.languageSwitcher .radio + label {
+  margin: 0;
+  padding: 5px 10px;
+  display: inline-block;
+}
+
+.languageSwitcher .radio + label:hover {
+  cursor: pointer;
+}
+
+.languageSwitcher .radio:checked+label {
+  background: white;
+  color:  #23d5ab;
 }

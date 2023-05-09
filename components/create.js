@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-function Create() {
+function Create(props) {
+    const content = props.content;
     const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
     const [number, setNumber] = useState('');
     const [error, setError] = useState('');
@@ -49,12 +50,12 @@ function Create() {
 
     return (
         <div className="createForm">
-            <h2>Neuen Zählerstand erfassen</h2>
+            <h2>{content.createNew}</h2>
             {error &&
                 <p>{error}</p>
             }
             <form onSubmit={handleAdmin} className={admin ? 'hide' : ''}>
-                <label htmlFor="adminpassword">Adminpasswort benötigt</label>
+                <label htmlFor="adminpassword">{content.admin}</label>
                 <input type="password" id="adminpassword" value={password} onChange={(e) => setPassword(e.target.value)} />
                 <button type="submit" className="btn">
                     Login
@@ -63,15 +64,15 @@ function Create() {
 
             <form onSubmit={handleSubmit} className={admin ? '' : 'hide'}>
                 <div>
-                    <lable htmlFor="date">Datum</lable>
+                    <lable htmlFor="date">{content.tableDate}</lable>
                     <input type="date" id="date" value={date} onChange={(e) => setDate(e.target.value)} />
                 </div>
                 <div>
-                    <lable htmlFor="value">Zählerstand</lable>
+                    <lable htmlFor="value">{content.tableReading}</lable>
                     <input type="num" id="value" value={number} onChange={(e) => setNumber(e.target.value)} />
                 </div>
                 <button type="submit" className="btn">
-                    Speichern
+                    {content.save}
                 </button>
             </form>
         </div>

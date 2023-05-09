@@ -1,7 +1,7 @@
 import CountUp from "react-countup";
 
 function Comparison(props) {
-    const sheetdata = props.sheetdata;
+    const {sheetdata, content} = props;
     let prev = 0;
     let savingLastYear = 0;
     let saveLastEntry = 0;
@@ -30,7 +30,7 @@ function Comparison(props) {
 
     return (
         <div className="compare">
-            Unterschied zum Monat des letzen Jahres
+            {content.comparison}
             <span className="saving">
                 {moreThanLastYear &&
                     <span>+</span>
