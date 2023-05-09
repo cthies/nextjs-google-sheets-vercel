@@ -1,5 +1,3 @@
-import CountUp from "react-countup";
-
 function Table(props) {
     const sheetdata = props.sheetdata;
     let prev = 0;
@@ -15,20 +13,10 @@ function Table(props) {
                     {item[0]}
                 </td>
                 <td id={item[0] + '-val'}>
-                    <CountUp
-                        start={0}
-                        end={Number(item[1])}
-                        duration={1}
-                        useEasing={true}
-                    />
+                    {item[1]}
                 </td>
                 <td className='diff'>
-                    <CountUp
-                        start={0}
-                        end={diff}
-                        duration={2}
-                        useEasing={true}
-                    />
+                    {diff}
                 </td>
             </tr>
         )
