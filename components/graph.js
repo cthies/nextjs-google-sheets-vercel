@@ -36,41 +36,41 @@ const Graph = (props) => {
 
     return (
         <div className="graph">
-        <div className="graphHoverValue">{text}</div>
-        <XYPlot width={300} height={280} xType='ordinal'>
-            <VerticalGridLines />
-            <HorizontalGridLines />
-            <XAxis tickLabelAngle={-45} style={{
-                text: { stroke: 'none', fill: '#ffffff', fontWeight: 600 }
-            }} />
-            <YAxis style={{
-                text: { stroke: 'none', fill: '#ffffff', fontWeight: 600 }
-            }} />
-            <LineMarkSeries
-                className="linemark-series-example-2"
-                curve={'curveMonotoneX'}
-                lineStyle={{ stroke: 'violet' }}
-                markStyle={{ stroke: 'cyan', fill: 'blueviolet' }}
-                data={slicedArray1}
-                name="2022"
-            />
-            <LineMarkSeries
-                className="linemark-series-example-2"
-                curve={'curveMonotoneX'}
-                lineStyle={{ stroke: 'chartreuse' }}
-                markStyle={{ stroke: 'blanchedalmond', fill: 'darkcyan' }}
-                data={slicedArray2}
-                name="2023"
-            />
-            <MarkSeries
-            data={[...slicedArray1,...slicedArray2]}
-            markStyle={{ stroke: 'blanchedalmond', fill: 'darkcyan' }}
-            onNearestXY={(val, {index}) => {
-                setText( val.d + ': ' + val.y);
-            }}
-            />
-            
-        </XYPlot>
+            <div className="graphHoverValue">{text}</div>
+            <XYPlot width={300} height={280} xType='ordinal'>
+                <VerticalGridLines />
+                <HorizontalGridLines />
+                <XAxis tickLabelAngle={-45} style={{
+                    text: { stroke: 'none', fill: '#ffffff', fontWeight: 600 }
+                }} />
+                <YAxis style={{
+                    text: { stroke: 'none', fill: '#ffffff', fontWeight: 600 }
+                }} />
+                <LineMarkSeries
+                    className="linemark-series-example-2"
+                    curve={'curveMonotoneX'}
+                    lineStyle={{ stroke: 'violet' }}
+                    markStyle={{ stroke: 'cyan', fill: 'blueviolet' }}
+                    data={slicedArray1}
+                    name="2022"
+                />
+                <LineMarkSeries
+                    className="linemark-series-example-2"
+                    curve={'curveMonotoneX'}
+                    lineStyle={{ stroke: 'chartreuse' }}
+                    markStyle={{ stroke: 'blanchedalmond', fill: 'darkcyan' }}
+                    data={slicedArray2}
+                    name="2023"
+                />
+                <MarkSeries
+                    data={[...slicedArray1, ...slicedArray2]}
+                    markStyle={{ stroke: 'blanchedalmond', fill: 'darkcyan' }}
+                    onNearestXY={(val, { index }) => {
+                        setText(val.d + ': ' + val.y);
+                    }}
+                />
+
+            </XYPlot>
         </div>
     );
 }
