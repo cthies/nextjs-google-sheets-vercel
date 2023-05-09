@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
 import '../node_modules/react-vis/dist/style.css';
-import { XYPlot, XAxis, YAxis, VerticalGridLines, HorizontalGridLines, LineMarkSeries, MarkSeries } from 'react-vis';
+import { XYPlot, XAxis, YAxis, VerticalGridLines, HorizontalGridLines, LineMarkSeries } from 'react-vis';
 import { format } from 'date-fns';
 
 const Graph = (props) => {
@@ -26,7 +26,6 @@ const Graph = (props) => {
                 d: item[0]
             });
         }
-
     });
 
     //split per year starting with December 2021
@@ -51,7 +50,6 @@ const Graph = (props) => {
                     lineStyle={{ stroke: 'violet' }}
                     markStyle={{ stroke: 'cyan', fill: 'blueviolet' }}
                     data={slicedArray1}
-                    name="2022"
                 />
                 <LineMarkSeries
                     className="linemark-series-example-2"
@@ -59,16 +57,7 @@ const Graph = (props) => {
                     lineStyle={{ stroke: 'chartreuse' }}
                     markStyle={{ stroke: 'blanchedalmond', fill: 'darkcyan' }}
                     data={slicedArray2}
-                    name="2023"
                 />
-                <MarkSeries
-                    data={[...slicedArray1, ...slicedArray2]}
-                    markStyle={{ stroke: 'blanchedalmond', fill: 'darkcyan' }}
-                    onNearestXY={(val, { index }) => {
-                        setText(val.d + ': ' + val.y);
-                    }}
-                />
-
             </XYPlot>
         </div>
     );

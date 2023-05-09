@@ -64,11 +64,11 @@ function Create(props) {
 
             <form onSubmit={handleSubmit} className={admin ? '' : 'hide'}>
                 <div>
-                    <lable htmlFor="date">{content.tableDate}</lable>
+                    <label htmlFor="date">{content.tableDate}</label>
                     <input type="date" id="date" value={date} onChange={(e) => setDate(e.target.value)} />
                 </div>
                 <div>
-                    <lable htmlFor="value">{content.tableReading}</lable>
+                    <label htmlFor="value">{content.tableReading}</label>
                     <input type="num" id="value" value={number} onChange={(e) => setNumber(e.target.value)} />
                 </div>
                 <button type="submit" className="btn">
