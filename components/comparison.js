@@ -1,7 +1,7 @@
 import CountUp from "react-countup";
 
 function Comparison(props) {
-    const {sheetdata, content} = props;
+    const { sheetdata, content } = props;
     let prev = 0;
     let savingLastYear = 0;
     let saveLastEntry = 0;
@@ -25,7 +25,7 @@ function Comparison(props) {
     });
 
     const saving = parseInt(saveLastEntry - savingLastYear);
-    const percentage = parseInt(Math.round(100 / savingLastYear * (saving)).toFixed(2));
+    const percentage = parseFloat(100 / savingLastYear * saving).toFixed(2);
     const moreThanLastYear = saving > 0;
 
     return (
@@ -47,6 +47,8 @@ function Comparison(props) {
                     <span>+</span>
                 }
                 <CountUp
+                    decimal='.'
+                    decimals={2}
                     start={0}
                     end={percentage}
                     duration={1}
