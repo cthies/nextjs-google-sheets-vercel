@@ -1,8 +1,9 @@
 function Table(props) {
     const { sheetdata, content } = props;
-    let prev = 0;
+    //get value from first entry for calculation
+    let prev = sheetdata[0][1];
 
-    const items = sheetdata.map((item, index) => {
+    const items = sheetdata.slice(1).map((item, index) => {
 
         let diff = Number(item[1]) - prev;
         prev = Number(item[1]);
