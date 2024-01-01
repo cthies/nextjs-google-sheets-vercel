@@ -28,9 +28,11 @@ const Graph = (props) => {
         }
     });
 
+    // TODO: make this flexible per year
     //split per year starting with December 2021
     const slicedArray1 = graphData.slice(0, 12);
-    const slicedArray2 = graphData.slice(12, 25);
+    const slicedArray2 = graphData.slice(12, 24);
+    const slicedArray3 = graphData.slice(24, 36);
 
     return (
         <div className="graph">
@@ -57,6 +59,13 @@ const Graph = (props) => {
                     lineStyle={{ stroke: 'chartreuse' }}
                     markStyle={{ stroke: 'blanchedalmond', fill: 'darkcyan' }}
                     data={slicedArray2}
+                />
+                <LineMarkSeries
+                    className="linemark-series-example-2"
+                    curve={'curveMonotoneX'}
+                    lineStyle={{ stroke: '#99FFFF' }}
+                    markStyle={{ stroke: 'black', fill: '#FFFF33' }}
+                    data={slicedArray3}
                 />
             </XYPlot>
         </div>

@@ -25,7 +25,7 @@ function Comparison(props) {
     });
 
     const saving = parseInt(saveLastEntry - savingLastYear);
-    const percentage = parseFloat(100 / savingLastYear * saving).toFixed(2);
+    const percentage = Number(parseInt(100 / savingLastYear * saving).toFixed(2));
     const moreThanLastYear = saving > 0;
 
     return (
